@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>VLS Official</title>
+</head>
+<body>
+
+    <!-- Fenêtre de bienvenue (pseudo + langue au premier chargement) -->
+    <div id="welcome-modal">
+        <div class="welcome-box">
+            <h2>Bienvenue sur VLS Official</h2>
+            <p>Choisis ton pseudo et la langue d’affichage. Tu pourras modifier ces paramètres plus tard dans la page « Paramètres ».</p>
+
+            <div class="welcome-field">
+                <label for="welcome-nickname">Pseudo affiché sur le site</label>
+                <input type="text" id="welcome-nickname" name="welcome-nickname" placeholder="Ton pseudo ici">
+            </div>
+
+            <div class="welcome-field">
+                <label for="welcome-language">Langue du site</label>
+                <select id="welcome-language" name="welcome-language">
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                    <option value="es">Español</option>
+                    <option value="zh">中文</option>
+                    <option value="ar">العربية</option>
+                </select>
+            </div>
+
+            <div class="welcome-buttons">
+                <button id="welcome-guest">Continuer en mode invité</button>
+                <button id="welcome-validate">Valider et entrer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barre du haut avec menu + PP + pseudo + langue + heure + jour/nuit -->
+    <header id="top-bar">
+        <div class="top-left">
+            <div class="logo-area">
+                <!-- PP rouge de VLS -->
+                <img id="vls-logo" src="https://raw.githubusercontent.com/MultitudeEntertainment/REGLEMENT-VLS-/refs/heads/main/IMG_0491_1.webp" alt="VLS Official">
+                <span class="site-title">VLS Official</span>
+            </div>
+
+            <nav id="main-menu">
+                <button class="menu-btn" data-target="page-home">Accueil & histoire</button>
+                <button class="menu-btn" data-target="page-rules">Règlement général</button>
+                <button class="menu-btn" data-target="page-staff">Staff & soutiens</button>
+                <button class="menu-btn" data-target="page-servers">Autres serveurs</button>
+                <button class="menu-btn" data-target="page-settings">Paramètres</button>
+            </nav>
+        </div>
+
+        <div class="top-right">
+            <!-- Barre latérale intégrée dans la barre du haut -->
+            <div id="top-sidebar">
+                <div class="profile-area">
+                    <!-- Avatar utilisateur (personnalisable plus tard) -->
+                    <img id="user-avatar" src="" alt="Avatar" class="avatar-circle">
+                    <div class="profile-texts">
+                        <span id="profile-nickname-label">Pseudo :</span>
+                        <span id="profile-nickname-value"></span>
+                    </div>
+                </div>
+
+                <div class="language-area">
+                    <span id="language-label">Langue :</span>
+                    <select id="language-select">
+                        <option value="fr">FR</option>
+                        <option value="en">EN</option>
+                        <option value="de">DE</option>
+                        <option value="es">ES</option>
+                        <option value="zh">CN</option>
+                        <option value="ar">SA</option>
+                    </select>
+                </div>
+
+                <div class="time-area">
+                    <span id="time-label">Heure (Europe/Paris)</span>
+                    <span id="time-value"></span>
+                </div>
+
+                <div class="theme-area">
+                    <span id="theme-label">Jour / Nuit</span>
+                    <button id="theme-toggle">Jour</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteneur principal -->
+    <main id="main-container">
+
+        <!-- Page : Accueil & histoire (Version A) -->
+        <section id="page-home" class="page-section">
+            <h1>Accueil & histoire de VLS Official</h1>
+            <h2>Communauté ouverte, soutien aux écrivains & espace de discussion</h2>
+
+            <div class="content-box">
+                <p>
+                    VLS Official est une communauté pensée pour les personnes aimant écrire, lire, discuter et soutenir les projets des autres.
+                    Le serveur Discord est au cœur du projet, mais ce site sert de vitrine : il présente l’histoire de la communauté, son règlement général
+                    et les différentes équipes qui la font vivre.
+                </p>
+                <p>
+                    L’initiative « Venez Les Soutenir » est née en décembre 2025 avec une idée simple : offrir un espace bienveillant à tous les écrivains,
+                    débutants comme confirmés, peuvent partager leurs textes, recevoir des retours constructifs et trouver de la motivation. Au fil du temps,
+                    la communauté s’est élargie à la discussion générale, aux recommandations, aux projets créatifs et aux échanges du quotidien.
+                </p>
+                <p>
+                    Les règles présentées sur ce site s’appliquent sur le serveur Discord afin de garantir un cadre respectueux, sécurisé et agréable pour tous.
+                    Si tu as la moindre question, tu peux la poser directement sur le serveur : la FAQ de ce site rappelle que toute question peut être posée
+                    à l’équipe ou aux membres sur VLS Official.
+                </p>
+            </div>
+        </section>
+
+        <!-- Page : Règlement général -->
+        <section id="page-rules" class="page-section" hidden>
+            <h1>Règlement général du serveur</h1>
+
+            <div class="content-box">
+                <h2>Respect & comportement</h2>
+                <p>
+                    Le respect est la base de ce serveur. Tu peux ne pas être d’accord avec quelqu’un, mais tu dois toujours rester correct dans ta manière de répondre.
+                    Les attaques personnelles, les moqueries et les comportements agressifs ne sont pas acceptés. Nous voulons un espace où chacun peut parler sans
+                    avoir peur d’être humilié ou insulté.
+                </p>
+                <p>
+                    Sont notamment interdits : le harcèlement, les insultes, les menaces, les attaques personnelles ou les remarques blessantes répétées ;
+                    les propos discriminatoires (racisme, sexisme, homophobie, transphobie, validisme, xénophobie, etc.) ; la diffusion de rumeurs, la diffamation,
+                    le doxxing ou la divulgation d’informations privées sans accord ; le trolling volontaire, les provocations, les messages uniquement destinés
+                    à créer des conflits ; toute attitude toxique nuisant au bon climat général du serveur.
+                </p>
+
+                <h2>Contenu sensible & NSFW</h2>
+                <p>
+                    Le serveur est un espace tout public. Aucun contenu réservé à un public adulte ou inadapté à un environnement ouvert n’est autorisé,
+                    même « pour rire » ou « entre amis ». Cela inclut la nudité, les images très suggestives, les scènes choquantes, le gore, la violence extrême
+                    ou tout contenu pouvant mettre mal à l’aise.
+                </p>
+
+                <h2>Activités strictement interdites</h2>
+                <p>
+                    Certaines actions peuvent mettre en danger le serveur ou les membres. Elles sont donc totalement interdites. Si tu ne sais pas si quelque chose
+                    est autorisé, demande à la modération avant d’agir.
+                </p>
+
+                <h2>Fiabilité des contenus & désinformation</h2>
+                <p>
+                    Quand tu partages un lien, une vidéo, un article ou une capture d’écran ou une information, essaie toujours de vérifier qu’elle est fiable.
+                    Internet contient beaucoup de rumeurs, de fausses informations et de contenus manipulés. Avant de poster, pose-toi quelques questions simples :
+                    la source est-elle connue ? l’information est-elle étayée ? d’autres sources sérieuses disent-elles la même chose ?
+                </p>
+            </div>
+        </section>
+
+        <!-- Page : Staff & soutiens -->
+        <section id="page-staff" class="page-section" hidden>
+            <h1>Équipe de modération & soutiens du serveur</h1>
+
+            <div class="content-box">
+                <h2>Fondateurs</h2>
+                <p>
+                    Les fondateurs sont à l’origine de VLS Official et veillent à ce que le projet reste fidèle à son idée de départ : une communauté bienveillante,
+                    structurée et ouverte, centrée sur l’écriture et les échanges. Ils coordonnent les grandes orientations du serveur, les salons, les événements
+                    et les collaborations.
+                </p>
+                <ul class="staff-list">
+                    <li>
+                        <span class="staff-name">Alex</span>
+                        <span class="staff-role">Fondateur</span>
+                    </li>
+                    <li>
+                        <span class="staff-name">Mini Alex</span>
+                        <span class="staff-role">Co-fondateur</span>
+                    </li>
+                </ul>
+
+                <h2>Staff de modération</h2>
+                <p>
+                    Le staff de modération assure le bon fonctionnement quotidien du serveur : accueil des nouveaux, gestion des salons, rappel du règlement,
+                    résolution des conflits, lutte contre le spam et les comportements toxiques. Leur rôle est d’être présents, disponibles et cohérents dans
+                    leurs décisions, afin que chacun se sente en sécurité.
+                </p>
+                <ul class="staff-list">
+                    <li>
+                        <span class="staff-name">XACK</span>
+                        <span class="staff-role">Modérateur</span>
+                    </li>
+                    <li>
+                        <span class="staff-name">Alex_Yun</span>
+                        <span class="staff-role">Modérateur</span>
+                    </li>
+                    <li>
+                        <span class="staff-name">MiloplayscatsMiloplayscats</span>
+                        <span class="staff-role">Stagiaire en modération</span>
+                    </li>
+                </ul>
+
+                <h2>Soutiens du serveur</h2>
+                <p>
+                    Les soutiens du serveur sont des membres qui participent activement à la vie de la communauté : présence régulière, participation aux discussions,
+                    aide aux nouveaux, partage de ressources, encouragements et bonne humeur. Ils contribuent à faire de VLS Official un endroit chaleureux et vivant.
+                </p>
+                <ul class="staff-list">
+                    <li><span class="staff-name">little canadian alces</span><span class="staff-role">Soutien</span></li>
+                    <li><span class="staff-name">LittleCreature</span><span class="staff-role">Soutien</span></li>
+                    <li><span class="staff-name">Flue</span><span class="staff-role">Soutien</span></li>
+                    <li><span class="staff-name">✧yuto✧</span><span class="staff-role">Soutien</span></li>
+                    <li><span class="staff-name">★ CoinCoin ★</span><span class="staff-role">Soutien</span></li>
+                    <li><span class="staff-name">Revan</span><span class="staff-role">Soutien</span></li>
+                    <li><span class="staff-name">Emrd</span><span class="staff-role">Soutien</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Page : Autres serveurs -->
+        <section id="page-servers" class="page-section" hidden>
+            <h1>Autres serveurs & collaborations</h1>
+
+            <div class="content-box">
+                <h2>Serveur partenaire : Thèmes Divers</h2>
+                <p>
+                    Thèmes Divers est un serveur partenaire de VLS Official. C’est une communauté agréable, en majorité francophone, où l’on peut discuter de tout
+                    et de rien : sujets sérieux, discussions légères, jeux, partage de liens, débats, moments de détente après une journée chargée.
+                </p>
+                <p>
+                    Si tu aimes les conversations variées, les échanges spontanés et les ambiances conviviales, Thèmes Divers est un bon complément à VLS Official :
+                    tu peux y parler de sujets plus larges, rencontrer d’autres personnes et prolonger les discussions en dehors du cadre de l’écriture.
+                </p>
+                <p>
+                    Clique sur la photo de profil du serveur pour rejoindre Thèmes Divers et découvrir ses salons, ses discussions et son ambiance.
+                </p>
+
+                <!-- PP Thèmes Divers -->
+                <div class="server-avatar">
+                    <img id="themes-divers-avatar" src="https://raw.githubusercontent.com/MultitudeEntertainment/REGLEMENT-VLS-/refs/heads/main/IMG_0348.webp" alt="Thèmes Divers">
+                </div>
+            </div>
+        </section>
+
+        <!-- Page : Paramètres -->
+        <section id="page-settings" class="page-section" hidden>
+            <h1>Paramètres du site</h1>
+
+            <div class="settings-grid">
+
+                <div class="settings-box">
+                    <h2>Pseudo</h2>
+                    <p>Choisis le pseudo affiché sur le site. Il sera visible dans la barre du haut à côté de ton avatar.</p>
+                    <p><strong>Pseudo actuel :</strong> <span id="settings-nickname-value"></span></p>
+                    <input type="text" id="settings-nickname-input" placeholder="Modifier ton pseudo">
+                    <button id="settings-nickname-save">Enregistrer</button>
+                </div>
+
+                <div class="settings-box">
+                    <h2>Langue</h2>
+                    <p>Choisis la langue principale de l’interface. Tu peux la modifier à tout moment.</p>
+                    <p><strong>Langue actuelle :</strong> <span id="settings-language-value"></span></p>
+                    <select id="settings-language-select">
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                        <option value="de">Deutsch</option>
+                        <option value="es">Español</option>
+                        <option value="zh">中文</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                    <button id="settings-language-save">Enregistrer</button>
+                </div>
+
+                <div class="settings-box">
+                    <h2>Fuseau horaire</h2>
+                    <p>Choisis la ville et le fuseau horaire utilisés pour l’affichage de l’heure.</p>
+                    <p><strong>Ville actuelle :</strong> <span id="settings-city-value">Paris</span></p>
+                    <p><strong>Fuseau :</strong> <span id="settings-timezone-value">Europe/Paris</span></p>
+                    <p><strong>Heure :</strong> <span id="settings-time-value"></span></p>
+                </div>
+
+                <div class="settings-box">
+                    <h2>Jour / Nuit</h2>
+                    <p>Choisis le thème du site : clair (Jour) ou sombre (Nuit).</p>
+                    <p><strong>Thème actuel :</strong> <span id="settings-theme-value">Jour</span></p>
+                    <button id="settings-theme-toggle">Basculer Jour / Nuit</button>
+                </div>
+
+                <div class="settings-box">
+                    <h2>Avatar personnalisé</h2>
+                    <p>Tu peux importer une image pour ton avatar (PNG, JPG, WEBP).</p>
+                    <input type="file" id="settings-avatar-input" accept=".png,.jpg,.jpeg,.webp">
+                    <button id="settings-avatar-save">Enregistrer l’avatar</button>
+                </div>
+
+                <div class="settings-box">
+                    <h2>Comment rejoindre VLS Official ?</h2>
+                    <p>
+                        Pour rejoindre VLS Official, clique sur le bouton ci-dessous. Tu seras redirigé vers le lien d’invitation Discord officiel.
+                        Une fois sur le serveur, tu pourras poser toutes tes questions, demander de l’aide pour l’écriture, partager tes textes ou simplement discuter.
+                    </p>
+                    <button id="settings-join-vls">Rejoindre VLS Official</button>
+                </div>
+
+                <div class="settings-box">
+                    <h2>Règles résumées</h2>
+                    <ul>
+                        <li>Respect des autres membres, pas d’insultes ni de harcèlement.</li>
+                        <li>Pas de contenu inadapté à un jeune public.</li>
+                        <li>Pas de spam, flood, ou trolling volontaire.</li>
+                        <li>Pas de piratage, vol, ou échange de sources suspectes.</li>
+                        <li>Pas de contenu suspect ou fichiers dangereux.</li>
+                    </ul>
+                </div>
+
+                <div class="settings-box">
+                    <h2>FAQ</h2>
+                    <p>Tu peux poser toutes tes questions directement sur le serveur : l’équipe et les membres sont là pour t’aider.</p>
+                </div>
+
+                <div class="settings-box">
+                    <h2>Contact staff</h2>
+                    <ul>
+                        <li>Alex — Fondateur</li>
+                        <li>XACK — Co-fondateur</li>
+                        <li>Miloplayscats — Stagiaire en développement</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pied de page -->
+    <footer id="footer">
+        <p>© 2026 — VLS Official • Initiative « Venez Les Soutenir » | Communauté ouverte, soutien aux écrivains & espace de discussion depuis décembre 2025.</p>
+    </footer>
+
+</body>
+</html>
